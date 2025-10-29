@@ -1,4 +1,4 @@
-#KLSTR Logger
+
 
 **KLSTR Logger** -> application that connects to multiple **KLSTR hardware fixtures** over **MQTT**.  
 Logs test data, tracks run status, assembles chunked payloads, and provides a live UI for observing multiple devices simultaneously.
