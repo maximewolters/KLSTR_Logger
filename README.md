@@ -7,7 +7,7 @@ Logs test data, tracks run status, assembles chunked payloads, and provides a li
 
 
 
-## 🛠️ Prerequisites
+##prereqs
 
 | Tool | Purpose |
 |------|----------|
@@ -19,10 +19,10 @@ Logs test data, tracks run status, assembles chunked payloads, and provides a li
 
 # 🧪 Quick Test (with local simulation)
 
-# 1. Install dependencies
+# 1. dependencies
 npm install
 
-# 2. Start a local MQTT broker
+# 2. Start local MQTT broker
 mosquitto -v
 
 # 3. In another terminal, run the simulator (creates fake fixtures)
