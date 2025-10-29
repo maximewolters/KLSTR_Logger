@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {"baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "~electron/*": ["electron/*"]
+    },
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": ["node", "electron"]
+  },
+  "include": ["electron", "src"]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "logger-app",
+  "version": "1.0.0",
+  "description": "Electron app that connects to KLSTR fixtures to extract logging",
+  "author": "Maxime Wolters",
+  "license": "ISC",
+  "main": "electron/main.js",
+  "homepage": "https://github.com/maximewolters/KLSTR_Logger#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/maximewolters/KLSTR_Logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maximewolters/KLSTR_Logger/issues"
+  },
+  
+"scripts": {
+  "dev": "concurrently -k \"vite\" \"tsup electron/main.ts electron/preload.ts --format cjs --sourcemap --watch --out-dir electron --external electron\" \"wait-on electron/main.js && cross-env LIBGL_ALWAYS_SOFTWARE=1 VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+  "build": "tsup electron/main.ts electron/preload.ts --format cjs --out-dir electron --external electron && vite build",
+  "start": "cross-env LIBGL_ALWAYS_SOFTWARE=1 electron .",
+  "pack": "npm run build && electron-builder --dir",
+  "dist": "npm run build && electron-builder",
+  "sim": "ts-node tools/sim.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+,
+  "build": {
+    "appId": "com.maximewolters.klstrlogger",
+    "productName": "KLSTR Logger",
+    "files": [
+      "dist/**",
+      "dist-electron/**",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build"
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@types/react-redux": "^7.1.34",
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^29.0.0",
+    "electron-builder": "^26.0.12",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "wait-on": "^9.0.1"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.9.2",
+    "mqtt": "^5.14.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
+    "redux-saga": "^1.4.2"
+  }
+}
