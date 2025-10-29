@@ -17,8 +17,7 @@ Logs test data, tracks run status, assembles chunked payloads, and provides a li
 | **git** | version control |
 | *(optional)* `ts-node` | run the simulator from `.ts` (we ship a `.js` version too) |
 
-# 🧪 Quick Test (with local simulation)
-
+#  Test with sim devices
 # 1. dependencies
 npm install
 
